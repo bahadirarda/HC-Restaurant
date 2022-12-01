@@ -3,7 +3,8 @@
 
 - It is the interface where we make definitions within the framework of certain rules in order to open the service or data we have to the outside world and make it available to other applications-platforms.
 
-------------
+#
+
 
 ### 🌐 DOMAIN Folder
 
@@ -12,7 +13,7 @@
 ![](https://learn.microsoft.com/tr-tr/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/media/net-core-microservice-domain-model/ordering-microservice-container.png)
 >Microsoft example of usage is in the photo above.
 
-------------
+#
 
 ### 📚 INFRASTRUCTURE Folder
 
@@ -21,7 +22,7 @@
 
 >This project, communication with the database is done using **CodeFirst**.
 
-------------
+#
 
 ### 🖥️ PRESENTATION Folder
 
@@ -29,7 +30,7 @@
 - It is a UI layer. 
 - The relationship with the DTO and the VM is used here in the places belonging to the relevant structure.
 
-------------
+#
 
 ### 🚀 NUGET Packages required for development
 
@@ -49,7 +50,7 @@
 - Microsoft.AspNetCore.Authentication.OpenIdConnect
 - SwashBuckle.AspNetCore
 
-------------
+#
 
 
 
