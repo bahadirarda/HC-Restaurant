@@ -26,7 +26,7 @@
 
 ### 🖥️ PRESENTATION Folder
 
-- This structure has been prepared for the design of the screen that the customer will see.
+- This structure has been prepared for the design of the screen that the client will see.
 - It is a UI layer. 
 - The relationship with the DTO and the VM is used here in the places belonging to the relevant structure.
 
