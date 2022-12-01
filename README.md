@@ -1,38 +1,37 @@
-🪢 API Folder
----
+### 🪢 API Folder
+
 
 - It is the interface where we make definitions within the framework of certain rules in order to open the service or data we have to the outside world and make it available to other applications-platforms.
 
-🌐 DOMAIN Folder
----
+------------
+
+### 🌐 DOMAIN Folder
 
 - **Entities** and **Repositories** used in the web project are located here.
 
 ![](https://learn.microsoft.com/tr-tr/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/media/net-core-microservice-domain-model/ordering-microservice-container.png)
 >Microsoft example of usage is in the photo above.
 
+------------
 
-
-📚 INFRASTRUCTURE Folder
----
+### 📚 INFRASTRUCTURE Folder
 
 - The structure that will include the **ORM** structure and the **database-related associations**.
 - The **Unit of Work** structure specific to this project is also located here.
 
 >This project, communication with the database is done using **CodeFirst**.
 
+------------
 
-🖥️ PRESENTATION Folder
----
+### 🖥️ PRESENTATION Folder
 
 - This structure has been prepared for the design of the screen that the customer will see.
 - It is a UI layer. 
 - The relationship with the DTO and the VM is used here in the places belonging to the relevant structure.
 
+------------
 
-
-🚀 NUGET Packages required for development
----
+### 🚀 NUGET Packages required for development
 
 `Only Importants`
 
@@ -50,7 +49,7 @@
 - Microsoft.AspNetCore.Authentication.OpenIdConnect
 - SwashBuckle.AspNetCore
 
-
+------------
 
 
 
