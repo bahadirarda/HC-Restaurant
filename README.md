@@ -13,7 +13,7 @@ It is the interface where we make definitions within the framework of certain ru
 
 This project, communication with the database is done using **CodeFirst**.
 
-### 📚 INFRASTRUCTURE Folder
+📚 INFRASTRUCTURE Folder
 ---
 
 The structure that will include the **ORM** structure and the **database-related associations**.
