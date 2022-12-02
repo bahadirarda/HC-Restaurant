@@ -32,7 +32,7 @@ namespace HC_API.Middleware
                 _logger.Log(message);
 
                 await _next(httpContext);
-                watch.Stop();//Request cevaplandığı için burada süreyi bitir!
+                watch.Stop();
 
                 message = "[Response] HTTP " + httpContext.Request.Method + " - " + httpContext.Request.Path + " responded " + httpContext.Response.StatusCode + " in " + watch.Elapsed.TotalMilliseconds + " ms.";
                 _logger.Log(message);
@@ -46,11 +46,10 @@ namespace HC_API.Middleware
         private Task HandleException(HttpContext context, Exception ex, Stopwatch watch)
         {
             context.Response.ContentType = "application/json";
-            context.Response.StatusCode = (int)HttpStatusCode.InternalServerError; //Hata durumunda 500 dönsün dedim ancak faklı middleware'ler yazılarak durumlara göre uygun kodlar döndürelebilir!
+            context.Response.StatusCode = (int)HttpStatusCode.InternalServerError; //Hata durumu kodu 500
 
             string errorMessage = "[Error]    HTTP " + context.Request.Method + " - " + context.Response.StatusCode + " Error Message " + ex.Message + " in " + watch.Elapsed.TotalMilliseconds + " ms";
             _logger.Log(errorMessage);
-            //Console.WriteLine(errorMessage);
 
             var result = JsonConvert.SerializeObject(new
             {
@@ -62,7 +61,7 @@ namespace HC_API.Middleware
         }
         public static class CustomExceptionHandlerExtension
         {
-           
+           //?
         }
 
     }
