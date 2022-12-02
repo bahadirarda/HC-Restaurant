@@ -25,4 +25,10 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\APPLICATION\HC_APPLICATION\HC_APPLICATION.csproj" />
+    <ProjectReference Include="..\..\INFRASTRUCTURE\HC_INFRASTRUCTURE\HC_INFRASTRUCTURE.csproj" />
+    <ProjectReference Include="..\..\PRESENTATION\HC_PRESENTATION\HC_PRESENTATION.csproj" />
+  </ItemGroup>
+
 </Project>
