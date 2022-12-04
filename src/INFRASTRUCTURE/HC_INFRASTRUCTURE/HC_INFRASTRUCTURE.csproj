@@ -17,7 +17,7 @@
 
   <ItemGroup>
     <Folder Include="Mapper\" />
-    <Folder Include="Repositories\" />
+    <Folder Include="Repositories\Concrete\" />
   </ItemGroup>
 
   <ItemGroup>
