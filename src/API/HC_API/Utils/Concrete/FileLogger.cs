@@ -21,25 +21,16 @@ namespace HC_API.Utils.Concrete
         public void Log(string message)
         {
             string path = @"C:\Logs\HC_Logs.txt"; //todo: Dosyanın kaydedileceği dizin, dinamik hale getirilecek.
-
-            if(!File.Exists(path))
+            try
             {
-                string createText = "FileLogger" + Environment.NewLine;
-                File.WriteAllText(path, createText, Encoding.UTF8);
+                sb.AppendLine(); //Bir satır altına ekleme işlemi yapar.
+                File.AppendAllText(path, message);
             }
-            else
+            catch (Exception ex)
             {
-                try
-                {
-                    File.AppendAllText(path, message);
-                }
-                catch (Exception ex)
-                {
-                    sb.Append("PROBLEM HERE!");
-                    sb.AppendLine();
-                    File.AppendAllText(path, ex.Message);
-                    File.WriteAllText(path,sb.ToString());
-                }
+                sb.Append("PROBLEM HERE!");
+                sb.AppendLine();
+                File.AppendAllText(path, ex.Message);
             }
         }
     }
