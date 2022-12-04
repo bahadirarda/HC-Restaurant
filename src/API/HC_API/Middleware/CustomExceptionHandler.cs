@@ -11,19 +11,19 @@ using System.Threading.Tasks;
 
 namespace HC_API.Middleware
 {
-	public class CustomExceptionHandler
-	{
-		private readonly RequestDelegate _next;
-		private readonly ILoggerService _logger;
+    public class CustomExceptionHandler
+    {
+        private readonly RequestDelegate _next;
+        private readonly ILoggerService _logger;
 
         public CustomExceptionHandler(RequestDelegate next, ILoggerService logger)
-		{
-			_next = next;
-			_logger = logger;
-		}
+        {
+            _next = next;
+            _logger = logger;
+        }
 
-		public async Task Invoke(HttpContext httpContext)
-		{
+        public async Task Invoke(HttpContext httpContext)
+        {
             //Bütün aksiyon burada yakalanıyor.
             var watch = Stopwatch.StartNew();
             try
@@ -59,10 +59,13 @@ namespace HC_API.Middleware
 
             return context.Response.WriteAsync(result);
         }
-        public static class CustomExceptionHandlerExtension
-        {
-           //?
-        }
 
+    }
+    public static class CustomExceptionHandlerExtension
+    {
+        public static IApplicationBuilder UseCustomExceptionHandler(this IApplicationBuilder builder)
+        {
+            return builder.UseMiddleware<CustomExceptionHandler>();
+        }
     }
 }

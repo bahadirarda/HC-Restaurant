@@ -1,9 +1,10 @@
-using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Identity.Web;
-using Microsoft.AspNetCore.Http;
+using System.Net;
+using Newtonsoft.Json;
+using HC_API.Utils.Interface;
 using HC_API.Middleware;
-using static HC_API.Middleware.CustomExceptionHandler;
+using HC_API.Utils.Concrete;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 
 builder.Services.AddControllers();
+builder.Services.AddSingleton<ILoggerService, FileLogger>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -32,7 +34,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 //Middleware Dependency Injection
-app.UseMiddleware<CustomExceptionHandler>();
+app.UseCustomExceptionHandler();
 
 app.UseAuthorization();
 
