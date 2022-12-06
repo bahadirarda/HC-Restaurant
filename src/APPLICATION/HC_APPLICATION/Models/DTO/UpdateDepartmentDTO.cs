@@ -8,7 +8,7 @@ namespace HC_APPLICATION.Models.DTO
 {
     public class UpdateDepartmentDTO
     {
-        public Guid ID { get; set; }
+        public Guid Id { get; set; }
         public string DepartmentName { get; set; }
 
         public DateTime? CreatedDate { get; set; }

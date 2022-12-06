@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HC_DOMAIN.Repositories.EntityRepository
 {
-    public interface IDepartmentRepository : IGenericRepository<AppUser>
+    public interface IDepartmentRepository : IGenericRepository<Department>
     {
     }
 }

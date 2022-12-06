@@ -11,7 +11,7 @@ namespace HC_DOMAIN.Entities.Concrete
 {
     public class OrderDetail: BaseEntity, IBaseEntity
     {
-        public Guid ID { get; set; }
+        public Guid Id { get; set; }
         public decimal UnitPrice { get; set; }
         public int Quantity { get; set; }
      

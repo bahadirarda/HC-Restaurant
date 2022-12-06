@@ -9,5 +9,6 @@ namespace HC_APPLICATION.Service.Concrete
 {
     public class AppUserService: IAppUserService
     {
+
     }
 }
