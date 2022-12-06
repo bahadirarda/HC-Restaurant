@@ -9,7 +9,7 @@ namespace HC_DOMAIN.Enums
     public enum Status
     {
         None,
-        Inserted,
+        Active,
         Deleted,
         Updated
     }

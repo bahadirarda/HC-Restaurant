@@ -1,22 +1,16 @@
 ﻿using HC_DOMAIN.Entities.Interface;
 using HC_DOMAIN.Enums;
-using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HC_DOMAIN.Entities.Concrete
+namespace HC_DOMAIN.Entities.BaseClass
 {
-    public class AppUserRole: IdentityRole, IBaseEntity
+    public class BaseEntity : IBaseEntity
     {
-        public AppUserRole()
-        {
-            Status = Status.Active;
-        }
         public Status Status { get; set; }
-
         public DateTime? CreatedDate { get; set; }
         public string CreatorUserName { get; set; }
 

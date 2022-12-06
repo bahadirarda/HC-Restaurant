@@ -1,28 +1,24 @@
-﻿using HC_DOMAIN.Entities.Interface;
-using HC_DOMAIN.Enums;
-using Microsoft.AspNetCore.Identity;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HC_DOMAIN.Entities.Concrete
+namespace HC_APPLICATION.Models.DTO
 {
-    public class AppUserRole: IdentityRole, IBaseEntity
+    public class UpdateEmployeeDTO
     {
-        public AppUserRole()
-        {
-            Status = Status.Active;
-        }
-        public Status Status { get; set; }
-
+        public Guid Id { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Title { get; set; }
+        public string Address { get; set; }
+        public Guid DepartmentId { get; set; }
+        public string DepartmentName { get; set; }
         public DateTime? CreatedDate { get; set; }
         public string CreatorUserName { get; set; }
-
         public DateTime? UpdatedDate { get; set; }
         public string UpdaterUserName { get; set; }
-
         public DateTime? DeletedDate { get; set; }
         public string DeleterUserName { get; set; }
     }

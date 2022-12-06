@@ -1,4 +1,5 @@
-﻿using HC_DOMAIN.Entities.Interface;
+﻿using HC_DOMAIN.Entities.BaseClass;
+using HC_DOMAIN.Entities.Interface;
 using HC_DOMAIN.Enums;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace HC_DOMAIN.Entities.Concrete
 {
-    public class Department: IBaseEntity
+    public class Department: BaseEntity, IBaseEntity
     {
         public Department()
         {
@@ -16,17 +17,8 @@ namespace HC_DOMAIN.Entities.Concrete
         }
         public Guid ID { get; set; }
         public string DepartmentName { get; set; }
-        public Status Status { get; set; }
-        public DateTime? CreatedDate { get; set; }
-        public string CreatorUserName { get; set; }
-
-        public DateTime? UpdatedDate { get; set; }
-        public string UpdaterUserName { get; set; }
-
-        public DateTime? DeletedDate { get; set; }
-        public string DeleterUserName { get; set; }
-
-        //relations
+      
+        //Relations
         public virtual List<Employee> Employees { get; set; }
     }
 }

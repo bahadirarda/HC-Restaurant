@@ -1,5 +1,5 @@
 ﻿using HC_DOMAIN.Entities.Interface;
-using HC_DOMAIN.Repositories.BaseRepository;
+
 using HC_INFRASTRUCTURE.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
@@ -8,32 +8,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HC_DOMAIN.Enums;
+using HC_DOMAIN.Repositories.EntityRepository;
 
 namespace HC_INFRASTRUCTURE.Repositories.Abstract
 {
-    public class BaseRepository<T>: IBaseRepository<T> where T : class, IBaseEntity
+    public class GenericRepository<TEntity>: IGenericRepository<TEntity> where TEntity : class, IBaseEntity
     {
         private readonly HC_DbContext _db;
-        protected DbSet<T> _table;
+        protected DbSet<TEntity> _table;
 
-        public BaseRepository(HC_DbContext db)
+        public GenericRepository(HC_DbContext db)
         {
             _db = db;
-            _table = _db.Set<T>();
+            _table = _db.Set<TEntity>();
         }
 
-        public async Task<string> Add(T entity)
+        public async Task<string> Add(TEntity entity)
         {
             await _table.AddAsync(entity);
             _db.SaveChanges();
             return "Data added";
         }
         
-        public async Task<string> Update(T entity)
+        public async Task<string> Update(TEntity entity)
         {
             try
             {
-                _db.Entry<T>(entity).State = EntityState.Modified;
+                _db.Entry<TEntity>(entity).State = EntityState.Modified;
                 _db.SaveChanges();
 
                 return "Data updated";
@@ -48,8 +50,8 @@ namespace HC_INFRASTRUCTURE.Repositories.Abstract
         {
             try
             {
-                T deleted = await GetById(id);
-                deleted.Status = HC_DOMAIN.Enums.Status.Deleted;
+                TEntity deleted = await GetById(id);
+                deleted.Status = Status.Deleted;
                 Update(deleted);
                 return "Data deleted";
             }

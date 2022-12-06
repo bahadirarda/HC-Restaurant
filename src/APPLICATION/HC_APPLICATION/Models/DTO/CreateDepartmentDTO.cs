@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HC_DOMAIN.Repositories.BaseRepository
+namespace HC_APPLICATION.Models.DTO
 {
-    internal interface ICategoryRepository
+    public class CreateDepartmentDTO
     {
+        public string DepartmentName { get; set; }
     }
 }

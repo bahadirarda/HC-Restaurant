@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace HC_APPLICATION.AutoMapper
 {
-    internal class Mapper
+    public class Mapper
     {
+
     }
 }
