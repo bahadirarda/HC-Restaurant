@@ -18,7 +18,6 @@ namespace HC_INFRASTRUCTURE.SeedData
             new Product { Id = Guid.NewGuid(), ProductName = "Ayran", Description = "Susurluk ayranı", Price = 7.50m, Stock = 30},
             new Product { Id = Guid.NewGuid(), ProductName = "Karanfil Çayı", Description = "Çayın daha önce tatmadığınız güzellikte hali", Price = 25.75m, Stock = 50 },
             new Product { Id = Guid.NewGuid(), ProductName = "Test Data", Description = "Test Data", Price = 100.00m, Stock = 500 }
-
         );
         }
     }

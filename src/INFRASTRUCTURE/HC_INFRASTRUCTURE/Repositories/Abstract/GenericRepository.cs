@@ -16,17 +16,17 @@ namespace HC_INFRASTRUCTURE.Repositories.Abstract
     public class GenericRepository<TEntity>: IGenericRepository<TEntity> where TEntity : class, IBaseEntity
     {
         private readonly HC_DbContext _db;
-        protected DbSet<TEntity> _table;
+        protected DbSet<TEntity> _dbSet;
 
         public GenericRepository(HC_DbContext db)
         {
             _db = db;
-            _table = _db.Set<TEntity>();
+            _dbSet = _db.Set<TEntity>();
         }
 
         public async Task<string> Add(TEntity entity)
         {
-            await _table.AddAsync(entity);
+            await _dbSet.AddAsync(entity);
             _db.SaveChanges();
             return "Data added";
         }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HC_DOMAIN.Repositories.EntityRepository
 {
-    public interface ISubCategory: IGenericRepository<SubCategory>
+    public interface ISubCategoryRepository: IGenericRepository<SubCategory>
     {
     }
 }
