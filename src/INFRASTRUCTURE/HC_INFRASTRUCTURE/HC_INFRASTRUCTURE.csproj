@@ -18,6 +18,8 @@
   <ItemGroup>
     <Folder Include="Mapper\" />
     <Folder Include="UnitOfWork\" />
+    <Folder Include="Mapper\Abstract\" />
+    <Folder Include="Mapper\Concrete\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,5 +28,7 @@
 
   <ItemGroup>
     <None Remove="UnitOfWork\" />
+    <None Remove="Mapper\Abstract\" />
+    <None Remove="Mapper\Concrete\" />
   </ItemGroup>
 </Project>

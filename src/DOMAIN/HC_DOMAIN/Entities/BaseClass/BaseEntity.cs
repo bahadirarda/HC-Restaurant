@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HC_DOMAIN.Entities.BaseClass
 {
-    public class BaseEntity : IBaseEntity
+    public abstract class BaseEntity : IBaseEntity
     {
         public Status Status { get; set; }
         public DateTime? CreatedDate { get; set; }

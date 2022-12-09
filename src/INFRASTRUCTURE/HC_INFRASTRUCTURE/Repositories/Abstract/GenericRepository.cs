@@ -13,7 +13,7 @@ using HC_DOMAIN.Repositories.EntityRepository;
 
 namespace HC_INFRASTRUCTURE.Repositories.Abstract
 {
-    public class GenericRepository<TEntity>: IGenericRepository<TEntity> where TEntity : class, IBaseEntity
+    public abstract class GenericRepository<TEntity>: IGenericRepository<TEntity> where TEntity : class, IBaseEntity
     {
         private readonly HC_DbContext _db;
         protected DbSet<TEntity> _dbSet;
