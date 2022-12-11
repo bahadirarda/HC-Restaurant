@@ -5,6 +5,7 @@ namespace HC_DOMAIN.UnitOfWork
 {
 	public interface IUnitOfWork
 	{
+        Task AllSave();
         IAppUserRepository AppUserRepository { get; }
         ICategoryRepository CategoryRepository { get; }
         ISubCategoryRepository SubCategoryRepository { get; }
@@ -14,7 +15,7 @@ namespace HC_DOMAIN.UnitOfWork
         IRoleRepository RoleRepository { get; }
         IOrderRepository OrderRepository { get; }
         IOrderDetailRepository OrderDetailRepository { get; }
-        Task AllSave();
+       
     }
 }
 

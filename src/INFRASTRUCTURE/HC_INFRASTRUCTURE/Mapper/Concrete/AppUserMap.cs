@@ -3,7 +3,7 @@ using HC_DOMAIN.Entities.Concrete;
 using HC_INFRASTRUCTURE.Mapper.Abstract;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace HC_INFRASTRUCTURE.Mapper
+namespace HC_INFRASTRUCTURE.Mapper.Concrete
 {
 	public class AppUserMap: BaseMap<AppUser>
 	{

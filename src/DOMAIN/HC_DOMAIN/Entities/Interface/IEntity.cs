@@ -8,6 +8,6 @@ namespace HC_DOMAIN.Entities.Interface
 {
     public interface IEntity<TEntity>
     {
-        TEntity ID { get; set; } // Full control on ID
+        TEntity Id { get; set; } // Full control on ID
     }
 }
