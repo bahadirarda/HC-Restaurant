@@ -19,6 +19,6 @@ namespace HC_DOMAIN.Entities.Interface
 
         public DateTime? DeletedDate { get; set; }
         public string? DeletedBy { get; set; }
-
+        object DeleterUserName { get; set; }
     }
 }

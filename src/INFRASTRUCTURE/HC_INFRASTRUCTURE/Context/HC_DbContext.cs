@@ -56,37 +56,47 @@ namespace HC_INFRASTRUCTURE.Context
         
         public override int SaveChanges()
         {
+            this.ChangeTracker.Entries();
+            var added = this.ChangeTracker.Entries();
+            var modifiedEntities = ChangeTracker.Entries()
 
-            this.ChangeTracker.DetectChanges();
-            var added = this.ChangeTracker.Entries()
-         .Where(x => x.State == EntityState.Added)
-         .Select(x => x.State)
-         .ToArray();
+            .Where(x => x.State == EntityState.Added ||
+            x.State == EntityState.Modified ||
+            x.State == EntityState.Deleted).ToList();
 
-            foreach (var entity in added)
+            DateTime date = DateTime.Now;
+
+            foreach (var item in modifiedEntities)
             {
-                if (entity is IBaseEntity)
+                IBaseEntity entity = item.Entity as IBaseEntity;
+
+                if(item != null)
                 {
-                    var track = entity as IBaseEntity;
-                    track.CreatedDate = DateTime.Now;
-                    track.CreatedBy = Id;
+                    switch(item.State)
+                    {
+                        case EntityState.Added:
+
+                            entity.CreatedDate = date;
+                            entity.Status = HC_DOMAIN.Enums.Status.Active;
+                            break;
+
+                        case EntityState.Modified:
+
+                            if (entity.Status == HC_DOMAIN.Enums.Status.Deleted)
+                            {
+                                entity.DeletedDate = date;
+                                entity.Status = HC_DOMAIN.Enums.Status.Deleted;
+                            }
+                            else
+                            {
+                                entity.UpdatedDate = date;
+                                entity.Status = HC_DOMAIN.Enums.Status.Updated;
+                            }
+                            break;
+                    }
                 }
             }
-
-            var modified = this.ChangeTracker.Entries()
-          .Where(x => x.Entity is IBaseEntity && x.State == EntityState.Modified)
-          .Select(x => x.Entity)
-          .ToArray();
-
-            foreach (var entity in modified)
-            {
-                if (entity is IBaseEntity)
-                {
-                    var track = entity as IBaseEntity;
-                    track.UpdatedDate = DateTime.Now;
-                    track.UpdatedBy = Id;
-                }
-            }
+                    
             return base.SaveChanges();
         }
     }
