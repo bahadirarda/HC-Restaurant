@@ -68,6 +68,7 @@ namespace HC_INFRASTRUCTURE.Context
 
             foreach (var item in modifiedEntities)
             {
+
                 IBaseEntity entity = item.Entity as IBaseEntity;
 
                 if(item != null)
