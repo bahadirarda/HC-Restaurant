@@ -15,7 +15,6 @@ namespace HC_DOMAIN.Entities.Concrete
         {
             Status = Status.Active;
         }
-        public Guid Id { get; set; }
         public string CategoryName { get; set; }
         public string Description { get; set; }
         

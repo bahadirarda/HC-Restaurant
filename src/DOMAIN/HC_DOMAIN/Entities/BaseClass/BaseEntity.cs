@@ -8,16 +8,20 @@ using System.Threading.Tasks;
 
 namespace HC_DOMAIN.Entities.BaseClass
 {
-    public class BaseEntity : IBaseEntity
+    public abstract class BaseEntity : IBaseEntity
     {
-        public Status Status { get; set; }
+        public BaseEntity()
+        {
+            CreatedDate = DateTime.Now;
+        }
+
+        public Guid Id { get; set; }
         public DateTime? CreatedDate { get; set; }
-        public string CreatorUserName { get; set; }
-
-        public DateTime? UpdatedDate { get; set; }
-        public string UpdaterUserName { get; set; }
-
+        public Guid CreatedById { get; set; }
         public DateTime? DeletedDate { get; set; }
-        public string DeleterUserName { get; set; }
+        public Guid? DeletedById { get; set; }
+        public DateTime? ModifiedDate { get; set; }
+        public Guid? ModifiedById { get; set; }
+        public Status Status { get; set; }
     }
 }

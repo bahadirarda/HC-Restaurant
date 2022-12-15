@@ -17,10 +17,18 @@
 
   <ItemGroup>
     <Folder Include="Mapper\" />
+    <Folder Include="UnitOfWork\" />
+    <Folder Include="Mapper\Abstract\" />
+    <Folder Include="Mapper\Concrete\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\DOMAIN\HC_DOMAIN\HC_DOMAIN.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="UnitOfWork\" />
+    <None Remove="Mapper\Abstract\" />
+    <None Remove="Mapper\Concrete\" />
+  </ItemGroup>
 </Project>
