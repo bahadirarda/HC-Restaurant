@@ -15,8 +15,8 @@ namespace HC_INFRASTRUCTURE.SeedData
         public void Configure(EntityTypeBuilder<Product> builder)
         {
             builder.HasData(
-                new Product { Id = Guid.NewGuid(), ProductName = "Maki Sushi", Description = "Maki sushi is a sushi roll with the seaweed.", UnitPrice = 10.99m, UnitsInStock = 250},
-                new Product { Id = Guid.NewGuid(), ProductName = "Maki Hoso", Description = "Boiling vegetables, serving with special hot sauce", UnitPrice = 8.99m, UnitsInStock = 300}
+                new Product { Id = Guid.NewGuid(), ProductName = "Maki Sushi", Description = "Maki sushi is a sushi roll with the seaweed.", Price = 10.99m, Stock = 250},
+                new Product { Id = Guid.NewGuid(), ProductName = "Maki Hoso", Description = "Boiling vegetables, serving with special hot sauce", Price = 8.99m, Stock = 300}
                 );
         }
     }
