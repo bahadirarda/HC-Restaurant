@@ -17,11 +17,11 @@ namespace HC_DOMAIN.Entities.BaseClass
 
         public Guid Id { get; set; }
         public DateTime? CreatedDate { get; set; }
-        public Guid CreatedById { get; set; }
+        public string? CreatedBy { get; set; }
         public DateTime? DeletedDate { get; set; }
-        public Guid? DeletedById { get; set; }
-        public DateTime? ModifiedDate { get; set; }
-        public Guid? ModifiedById { get; set; }
+        public string? DeletedBy { get; set; }
+        public DateTime? UpdatedDate { get; set; }
+        public string? UpdatedBy { get; set; }
         public Status Status { get; set; }
     }
 }
