@@ -19,6 +19,7 @@ namespace HC_APPLICATION.AutoMapper
             CreateMap<AppUser, RegisterDTO>().ReverseMap();
             CreateMap<AppUser, AppUserVM>().ReverseMap();
             CreateMap<UpdateUserDTO, AppUserVM>().ReverseMap();
+            CreateMap<AppUser, IdentityUser>().ReverseMap();
 
             CreateMap<IdentityRole, CreateRoleDTO>().ReverseMap();
             CreateMap<AppUserRole, CreateRoleDTO>().ReverseMap();

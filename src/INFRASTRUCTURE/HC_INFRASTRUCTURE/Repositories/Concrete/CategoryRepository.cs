@@ -18,5 +18,29 @@ namespace HC_INFRASTRUCTURE.Repositories.Concrete
 
         }
 
+        public async Task<Category> GetCategoryById(Guid id)
+        {
+            return await GetById(id);
+        }
+
+        public async Task<List<Category>> GetAllCategories()
+        {
+            return await GetList();
+        }
+
+        public async Task<string> CreateCategory(Category category)
+        {
+            return await Add(category);
+        }
+
+        public async Task<string> UpdateCategory(Category category)
+        {
+            return await Update(category);
+        }
+
+        public async Task<string> DeleteCategory(Guid id)
+        {
+            return await Delete(id);
+        }
     }
 }

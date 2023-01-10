@@ -9,6 +9,8 @@ namespace HC_DOMAIN.Repositories.EntityRepository
 {
     public interface IOrderDetailRepository: IGenericRepository<OrderDetail>
     {
-
+        Task<OrderDetail> GetOrderDetailById(Guid id);
+        Task<List<OrderDetail>> GetOrderDetailsByOrderId(Guid orderId);
+        Task<List<OrderDetail>> GetAllOrderDetails();
     }
 }

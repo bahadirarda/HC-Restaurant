@@ -9,5 +9,8 @@ namespace HC_DOMAIN.Repositories.EntityRepository
 {
     public interface ISubCategoryRepository: IGenericRepository<SubCategory>
     {
+        Task<SubCategory> GetSubCategoryById(Guid id);
+        Task<List<SubCategory>> GetAllSubCategories();
+        Task<List<SubCategory>> GetSubCategoriesByCategoryId(Guid categoryId);
     }
 }

@@ -16,5 +16,34 @@ namespace HC_INFRASTRUCTURE.Repositories.Concrete
         {
 
         }
+        public async Task<Employee> GetEmployeeById(Guid id)
+        {
+            return await GetById(id);
+        }
+
+        public async Task<List<Employee>> GetEmployeesByDepartmentId(Guid departmentId)
+        {
+            return await GetByDefaults(p => p.DepartmentId == departmentId);
+        }
+
+        public async Task<List<Employee>> GetAllEmployees()
+        {
+            return await GetList();
+        }
+
+        public async Task<string> CreateEmployee(Employee employee)
+        {
+            return await Add(employee);
+        }
+
+        public async Task<string> UpdateEmployee(Employee employee)
+        {
+            return await Update(employee);
+        }
+
+        public async Task<string> DeleteEmployee(Guid id)
+        {
+            return await Delete(id);
+        }
     }
 }

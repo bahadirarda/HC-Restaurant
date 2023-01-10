@@ -16,5 +16,30 @@ namespace HC_INFRASTRUCTURE.Repositories.Concrete
         {
         
         }
+
+        public async Task<Department> GetDepartmentById(Guid id)
+        {
+            return await GetById(id);
+        }
+
+        public async Task<List<Department>> GetAllDepartments()
+        {
+            return await GetList();
+        }
+
+        public async Task<string> CreateDepartment(Department department)
+        {
+            return await Add(department);
+        }
+
+        public async Task<string> UpdateDepartment(Department department)
+        {
+            return await Update(department);
+        }
+
+        public async Task<string> DeleteDepartment(Guid id)
+        {
+            return await Delete(id);
+        }
     }
 }

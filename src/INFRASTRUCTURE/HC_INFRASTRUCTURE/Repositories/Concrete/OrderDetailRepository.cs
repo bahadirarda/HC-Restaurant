@@ -16,5 +16,34 @@ namespace HC_INFRASTRUCTURE.Repositories.Concrete
         {
 
         }
+        public async Task<OrderDetail> GetOrderDetailById(Guid id)
+        {
+            return await GetById(id);
+        }
+
+        public async Task<List<OrderDetail>> GetOrderDetailsByOrderId(Guid orderId)
+        {
+            return await GetByDefaults(p => p.OrderId == orderId);
+        }
+
+        public async Task<List<OrderDetail>> GetAllOrderDetails()
+        {
+            return await GetList();
+        }
+
+        public async Task<string> CreateOrderDetail(OrderDetail orderDetail)
+        {
+            return await Add(orderDetail);
+        }
+
+        public async Task<string> UpdateOrderDetail(OrderDetail orderDetail)
+        {
+            return await Update(orderDetail);
+        }
+
+        public async Task<string> DeleteOrderDetail(Guid id)
+        {
+            return await Delete(id);
+        }
     }
 }
