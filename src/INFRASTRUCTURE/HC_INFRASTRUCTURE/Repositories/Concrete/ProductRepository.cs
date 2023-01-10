@@ -48,4 +48,3 @@ namespace HC_INFRASTRUCTURE.Repositories.Concrete
         }
     }
 }
-}
