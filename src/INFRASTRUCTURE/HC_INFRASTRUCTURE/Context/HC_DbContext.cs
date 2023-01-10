@@ -16,7 +16,7 @@ namespace HC_INFRASTRUCTURE.Context
     {
         public HC_DbContext(DbContextOptions options) : base(options)
         {
-
+            
         }
 
 
