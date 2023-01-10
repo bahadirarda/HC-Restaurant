@@ -20,5 +20,34 @@ namespace HC_INFRASTRUCTURE.Repositories.Concrete
         {
 
         }
+        public async Task<SubCategory> GetSubCategoryById(Guid id)
+        {
+            return await GetById(id);
+        }
+
+        public async Task<List<SubCategory>> GetAllSubCategories()
+        {
+            return await GetList();
+        }
+
+        public async Task<List<SubCategory>> GetSubCategoriesByCategoryId(Guid categoryId)
+        {
+            return await GetByDefaults(p => p.CategoryId == categoryId);
+        }
+
+        public async Task<string> CreateSubCategory(SubCategory subCategory)
+        {
+            return await Add(subCategory);
+        }
+
+        public async Task<string> UpdateSubCategory(SubCategory subCategory)
+        {
+            return await Update(subCategory);
+        }
+
+        public async Task<string> DeleteSubCategory(Guid id)
+        {
+            return await Delete(id);
+        }
     }
 }

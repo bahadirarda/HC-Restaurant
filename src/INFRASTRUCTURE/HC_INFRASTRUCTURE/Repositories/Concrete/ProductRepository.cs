@@ -14,6 +14,38 @@ namespace HC_INFRASTRUCTURE.Repositories.Concrete
     {
         public ProductRepository(HC_DbContext db): base(db)
         {
+
+        }
+
+        public async Task<Product> GetProductById(Guid id)
+        {
+            return await GetById(id);
+        }
+
+        public async Task<List<Product>> GetAllProducts()
+        {
+            return await GetList();
+        }
+
+        public async Task<List<Product>> GetProductsByName(string name)
+        {
+            return await GetByDefaults(p => p.ProductName == name);
+        }
+
+        public async Task<string> CreateProduct(Product product)
+        {
+            return await Add(product);
+        }
+
+        public async Task<string> UpdateProduct(Product product)
+        {
+            return await Update(product);
+        }
+
+        public async Task<string> DeleteProduct(Guid id)
+        {
+            return await Delete(id);
         }
     }
+}
 }
