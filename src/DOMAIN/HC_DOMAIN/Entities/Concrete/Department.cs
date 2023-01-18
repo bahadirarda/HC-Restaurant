@@ -15,6 +15,7 @@ namespace HC_DOMAIN.Entities.Concrete
         {
             Status = Status.Active;
         }
+        
         public string DepartmentName { get; set; }
       
         //Relations

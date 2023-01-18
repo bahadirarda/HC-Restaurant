@@ -9,6 +9,7 @@ namespace HC_DOMAIN.Entities.Interface
 {
     public interface IBaseEntity
     {
+        
         public Status Status { get; set; }
         public DateTime? CreatedDate { get; set; }
         public string? CreatedBy { get; set; }

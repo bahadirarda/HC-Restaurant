@@ -45,9 +45,10 @@ namespace HC_INFRASTRUCTURE.Context
 
             //SeedData Building
             builder.ApplyConfiguration(new CategorySeed());
-            builder.ApplyConfiguration(new DepartmentSeed());
             builder.ApplyConfiguration(new EmployeeSeed());
-            builder.ApplyConfiguration(new ProductSeed());
+            builder.ApplyConfiguration(new DepartmentSeed());
+            
+            //builder.ApplyConfiguration(new ProductSeed());
 
 
 

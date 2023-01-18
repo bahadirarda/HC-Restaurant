@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CS0006: Metadata file 'C:\Users\erkut\OneDrive\Masaüstü\HotCat\src\APPLICATION\HC_APPLICATION\obj\Debug\net6.0\ref\HC_APPLICATION.dll' could not be found
+dotnet_diagnostic.CS0006.severity = error

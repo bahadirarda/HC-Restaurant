@@ -22,6 +22,10 @@ namespace HC_INFRASTRUCTURE.Repositories.Concrete
             _userManager = userManager;
         }
 
+        public AppUserRepository(HC_DbContext db) : base(db)
+        {
+        }
+
         public async Task<AppUser> GetUserById(Guid id)
         {
             return await GetById(id);

@@ -15,6 +15,7 @@ namespace HC_DOMAIN.Entities.Concrete
         {
             Status = Status.Active;
         }
+       
         public Status Status { get; set; }
 
         public DateTime? CreatedDate { get; set; }

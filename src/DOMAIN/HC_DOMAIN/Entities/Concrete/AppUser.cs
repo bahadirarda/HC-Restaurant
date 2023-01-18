@@ -15,6 +15,7 @@ namespace HC_DOMAIN.Entities.Concrete
         {
             Status = Status.Active;
         }
+        
         public string FullName { get; set; }
         public DateTime? BirthDate { get; set; }
         public string ImagePath { get; set; }

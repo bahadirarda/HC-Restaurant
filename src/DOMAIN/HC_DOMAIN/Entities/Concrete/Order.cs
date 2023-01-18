@@ -15,8 +15,9 @@ namespace HC_DOMAIN.Entities.Concrete
         {
             Status = Status.Active;
         }
+        
 
-    
+
 
         //Relations
         public Guid EmployeeId { get; set; }

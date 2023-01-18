@@ -15,6 +15,7 @@ namespace HC_DOMAIN.Entities.Concrete
         {
             Status = Status.Active;
         }
+        
         public string ProductName { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }

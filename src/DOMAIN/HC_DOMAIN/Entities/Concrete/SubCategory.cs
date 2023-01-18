@@ -15,6 +15,7 @@ namespace HC_DOMAIN.Entities.Concrete
         {
             Status = Status.Active;
         }
+        
         public string SubCategoryName { get; set; }
         public string Description { get; set; }
      

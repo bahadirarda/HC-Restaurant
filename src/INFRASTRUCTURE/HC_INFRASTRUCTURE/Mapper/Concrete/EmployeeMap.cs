@@ -16,7 +16,9 @@ namespace HC_INFRASTRUCTURE.Mapper.Concrete
             builder.Property(x => x.Address).IsRequired(false).HasMaxLength(100);
 
             //İlişkilendirme - Departmant ile Employees classlarının ForeingKey ile birbirine bağlama
-            builder.HasOne(x => x.Department).WithMany(x => x.Employees).HasForeignKey(x => x.DepartmentId);
+            builder.HasOne(x => x.Department)
+                .WithMany(x => x.Employees)
+                .HasForeignKey(x => x.DepartmentId);
             
 
             base.Configure(builder);
